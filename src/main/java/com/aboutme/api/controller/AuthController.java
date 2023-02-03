@@ -3,7 +3,7 @@ package com.aboutme.api.controller;
 import com.aboutme.api.model.User;
 import com.aboutme.api.repository.UserRepository;
 import com.aboutme.api.security.jwt.JwtUtils;
-import com.aboutme.api.security.service.UserDetailsImpl;
+import com.aboutme.api.security.model.UserDetailsImpl;
 import com.aboutme.api.payload.request.LoginRequest;
 import com.aboutme.api.payload.request.SignupRequest;
 import com.aboutme.api.payload.response.JtwResponse;

@@ -2,6 +2,7 @@ package com.aboutme.api.security.service;
 
 import com.aboutme.api.model.User;
 import com.aboutme.api.repository.UserRepository;
+import com.aboutme.api.security.model.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

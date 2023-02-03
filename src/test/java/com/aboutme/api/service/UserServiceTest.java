@@ -12,7 +12,7 @@ public class UserServiceTest {
     private UserService userService = mock(UserService.class);
 
     @Test
-    public void shouldReturnAUsers_onGet() {
+    public void shouldReturnUsers_onGet() {
         //when
         List<User> users = userService.findAll();
         Assertions.assertNotEquals(null, users);

@@ -1,6 +1,6 @@
 package com.aboutme.api.security.jwt;
 
-import com.aboutme.api.security.service.UserDetailsImpl;
+import com.aboutme.api.security.model.UserDetailsImpl;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

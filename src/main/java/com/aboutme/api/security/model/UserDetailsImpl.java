@@ -1,4 +1,4 @@
-package com.aboutme.api.security.service;
+package com.aboutme.api.security.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.aboutme.api.model.User;
