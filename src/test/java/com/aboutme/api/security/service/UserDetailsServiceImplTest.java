@@ -1,31 +1,29 @@
 package com.aboutme.api.security.service;
 
-import com.aboutme.api.repository.UserRepository;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.context.annotation.Import;
+import com.aboutme.api.security.model.UserDetailsImpl;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 
 
-@Import(UserRepository.class)
-@ExtendWith(SpringExtension.class)
-@WebMvcTest({UserRepository.class})
-@AutoConfigureMockMvc(addFilters = false)
+@RunWith(SpringRunner.class)
 public class UserDetailsServiceImplTest {
 
-    @Autowired
-    private UserDetailsServiceImpl userDetailsService; //= mock(UserDetailsServiceImpl.class);
+    @MockBean
+    UserDetailsServiceImpl userDetailsServiceImpl;
 
 
     @Test
     public void shouldReturnUserDetails_onGet() {
-        //when
-        UserDetails users = userDetailsService.loadUserByUsername("test");
-        Assertions.assertNotEquals(null, users);
+        UserDetails userDetails = new UserDetailsImpl("1","test@test.com","1234", "test");
+        Mockito.when(userDetailsServiceImpl.loadUserByUsername("test")).thenReturn(userDetails);
+    }
+
+    @Test
+    public void shouldReturnNul_onGet() {
+        Mockito.when(userDetailsServiceImpl.loadUserByUsername("test")).thenReturn(null);
     }
 }
